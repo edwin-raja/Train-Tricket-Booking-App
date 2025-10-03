@@ -1,0 +1,19 @@
+package com.example.traintricketbookingapp.util;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Arrays;
+
+public class ExceptionLoggerUtil {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionLoggerUtil.class);
+
+	public static void logException(
+			Throwable t, 
+			String requestURL) {
+
+		LOGGER.error("Exception Occurred for the URL: {}", requestURL);
+		LOGGER.error("Exception stackTrace: {}", Arrays.toString(t.getStackTrace()));
+	}
+}
